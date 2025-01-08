@@ -1,0 +1,82 @@
+// node -v = versão do node instalada ou node --version
+
+//node nomedoarquivo.js ===iniciar o mesmo em node
+
+// pwd = path working directory = cmd não funciona seria path
+// mkdir nome-arquivo === criar uma pasta com o nome usar este padrão para evitar conflito de leitura de arquivos
+// cd === change directory exemplo criou uma pasta de cd nome-arquivo para acessar
+// cd .. === retorna a pasta anterior
+// na pasta do arquivo podemos usar code . === executar o projeto em vscode
+// no terminal dentro do vscode para executar o arquivo em node basta usar o terminal integrado e usar node e nome do arquivo.js
+
+// neste projeto vamos usar backend então temos que usar api local usando json server npm install json-server
+// json-server --watch backend/videos.json === aqui vamos buscar o arquivo de api local dentro da pasta para carregar
+//com isso ele coloca nossa api local http://localhost:3000/videos onde temos acesso para trazer ao nosso projeto
+
+// npm = node pack manager
+//npm init = para instalar o gerenciador de pacotes para fazer uso de pacotes sempre temos que usar o comando para crriar nosso pacote
+//npm init === cria o pacote package.json
+
+// npm init @eslint/config@latest -- eslint para achar erros no codigo js
+// npm init @eslint/config@(0.4.6) <=== versão de acordo ao video vamos escolher a opção de checar syntax e achar problemas
+//apos configurar de acordo com o que usamos no projeto
+//agora nosso package.json já tem nas dependencias o eslint e versão isso tambem serve para quando pegarmos projetos
+
+//vermos o que tem de dependencias para saber oq precisamos instalar de pacotes para executar o projeto
+// para usar eslint para buscar erros em algum arquivo podemos usar o comando
+//npx eslint nomearquivo.js
+//neste caso teve erro de acordo com documentação npx @eslint/migrate-config .eslintrc.json
+//para fazer a migração para forma atual
+//agora sim npx eslint script.js vai funcionar e nos mostrar o erro de js dentro do terminal
+
+//podemos usar npx eslint . === vai fazer verificação em todos os arquivos js de nosso projeto e buscar erros caso de modules
+//para evitar erros de commits em pastas caso a extensão do github tenha sido instalada no vscode
+
+//criamos um arquivo .gitignore e dentro colocamos nossa pasta node_modules e salvamos para ignorar a pasta
+//git remote rm origin === remove o repositorio das referencias locais
+//caso mudarmos repositorio e desejar no mesmo arquivo mudar o destino do remote fazemos isso e depois damos novo git remote add origin url
+//ai sim depois nosso push para evitar erros
+
+//com a estençao do eslint da microsoft ele ira apontar erros porem em arquivos para varedura total usaremos sempre npx eslint .
+
+//save dev para criar em dependencia dev para não ir para linha de produção apenas no desenvolvimento do projeto
+//npm install --save-dev --save-exact prettier@3.0.3 vamos utilizar o prettier para usar estruturas de codigos padronizadas 3.0.3 versao video
+
+//aplicando prettier === usar extensao
+//com a extensao apos instalação podemos usar ctrl shift p === paleta de comandos
+//>setting oper user settings(JSON) === vai abrir a aba de settings.json do vscode geral e la podemos definir o formatador padrao do vscode
+//botao direito format document ou shift alt f
+
+//"editor.formatOnSave": true, <== essa conf do settings.json faz o prettier ao salvar arquivo ja formatar
+// eslint ficou responsavel para tarefa de encontrar erros e prettier formatação
+//caso exitir projetos que use o eslint para regras de formatação e quiser usar prettier tem que tomar cuidado e limpar a rules do eslint
+
+//resumo
+
+//npm init --y oy y == cria arquivo package.json
+//npm install --save-dev --save-exact prettier@3.0.3 === instala o pacote e a versão em modo dev
+//npx <pacote>[@<versão>] se a versão não for especificada roda a mais recente
+
+//json server boa pratica e não instalar ele global pois ele não fica salva nas dependencias e não é possivel ver a versão
+//npm install json-server@0.16.0 -D neste projeto
+//json-server -v verificar versão do server
+//remover json-server global npm unistall -g json-server
+//dentro do package.json nas dependencias podemos mudar a versão trocando os numeros e depois dar npm install que ira atualziar de acordo
+// novamente vamos incializar o server npx json-server --watch backend/videos.json
+// versionamento 0(versão maior quando muda o pacote vai descontinuar recursos).0(versão menor novos recursos geralmente).0(geralmente alguma alteração de bugs)
+//existem guias de modificações para versoes ou as vezes não existem mais recursos de uma para outra
+//eslint "eslint": "^9.17.0", neste caso de versão e que a nossa sera compativel a versoes maiores
+//não e uma boa pratica em versoes usar o ^para evitar erros de versoes de acordo com usuario utilizando
+//sempre utilizar o npm install para atualizar versoes de acordo com as do projeto
+
+//para executar api local ctrl + c para execução do json-server
+//podemos dentro do package.json criar dentro da chave script "api-local": "json-server --watch backend/videos.json"
+// agora podemos rodar o projeto apenas usando npm run api-local
+
+//podemos tambem criar na mesma chave "checar-codigo": "eslint ." para que o eslint faça checagem e chamar pelo terminal npm run checar-codigo
+
+//axios == pacote para realizar requisições http
+//<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script> colocar no index.html no head pois nao precisa carregar dom
+
+//instalando axios npm == npm install axios@1.6.0 -E // ele foi adicionado em dependecies pois precisa do codigo do axios em produção
+//se um pacote for necessario no funcionamento do nosso projeto no codigo ele sera uma dependencia de produção axios é um caso

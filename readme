@@ -1,0 +1,21 @@
+//npm run dev === rodar nosso projeto em node
+// create-vite@4.4.1 versão do curso
+// nodejs-vidflow-vite === nome projeto
+// escolhemos vanila == js puro
+// js sem typescript
+
+//vite === roda em server node.js não precisamos criar um servidor no caso com js e node.js
+// cd nodejs-vidflow-vite === para entrar na pasta ja do projeto
+// code . === executar no vscode
+// npm install === instalar o node
+// npm run dev === iniciar projeto
+
+//agora com server configurado pelo vite e depois de pegar todos scripts ja criados no projeto antigo e dependencias e colocadas neste novo
+//npm install para baixar todas ao nosso projeto
+
+//agora no script.js === import axios from "axios";
+//sintaxe nativa porem colocar nome de pacote só funciona em ambiente node caso contrario erro
+
+//vite se vira em converter sintaxe para front end e navegadores entender
+
+//npm run api-local ==== rodar nossa api do json server
