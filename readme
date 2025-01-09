@@ -19,3 +19,39 @@
 //vite se vira em converter sintaxe para front end e navegadores entender
 
 //npm run api-local ==== rodar nossa api do json server
+
+//agora para desenvolvimento estamos ok porem por ser localhost ao subir o projeto não tera acesso
+//vamos ter que mudar a requisição para url para subir em produção
+
+//caso desejar https://gist.github.com/
+//aqui podemos criar codigos escritos em qualquer linguagem e poder compartilhar pois estão online não sendo apenas local
+//serve apenas para requisições do tipo get
+
+//https://gist.githubusercontent.com/antonio-evaldo/e8a63621b51c883931eb3fa3a3eca990/raw/12f5c46ee6dd00d03c051adadaf341e06452cea0/videos.txt
+
+//antes de fazer deploy fazer previa local === npm run build
+//com isso o vite faz a transformação de nosso projeto para uma versão minificada e salva na pasta dist
+//ele comprime os arquivos o maximo possivel para performace
+
+//agora para visualizar nosso projeto da forma atual usaremos vite preview === npm run preview
+
+// ➜ Local: http://localhost:4173/
+// ➜ Network: use --host to expose
+// ➜ press h to show help
+
+//agora sera gerado um novo host para verificar se esta funcionando antes de produção
+
+//quando for realizar manutenções em nossos projetos se atentar em efetuar a troca do endereço de requisição
+//local para manutenções e a url final para produção assim não correr riscos de apagar ou modificar do projeto final
+//então podemos dinamizar com vite para ele saber quando abrir em modo desenvolvimento e quando for produção
+
+//quando estamos trabalhando com previa de produção sempre temos que fazer um novo build ao modificar codigo
+//"build-preview": "vite build --watch" criamos novo script com --watch em um novo terminal
+//vamos executar o mesmo para que sempre que tenha atualização ele ja modifique automaticamente
+
+//agora pelo vite === false === ambiente de desenvolvimento quando usado precisamos de nossa api-local rodando em node
+//e quando subir para produção ira mandar o da url com as informações do projeto
+//https://gist.githubusercontent.com/antonio-evaldo/e8a63621b51c883931eb3fa3a3eca990/raw/12f5c46ee6dd00d03c051adadaf341e06452cea0/videos.txt
+
+//ao subir projeto no vercel so aparece os videos caso dermos npm run api-local para acessar a api criada
+//json-server --watch backend/videos.json

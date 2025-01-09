@@ -3,10 +3,14 @@ import axios from "axios";
 const containerVideos = document.querySelector(".videos__container");
 
 async function buscarEMostrarVideos() {
+  //variavel de ambiente condicional ternario para variar o valor em ambiente que sera utilizada
+  const urlVideos = import.meta.env.PROD
+    ? "https://gist.githubusercontent.com/antonio-evaldo/e8a63621b51c883931eb3fa3a3eca990/raw/12f5c46ee6dd00d03c051adadaf341e06452cea0/videos.txt"
+    : "http://localhost:3000/videos";
   try {
     // const busca = await fetch("http://localhost:3000/videos");
     // const videos = await busca.json();
-    const busca = await axios.get("http://localhost:3000/videos");
+    const busca = await axios.get(urlVideos);
 
     const videos = busca.data;
 
